@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escape Room Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 <span style="color:gold;">ESCAPE</span> ROOM <span style="color:red;">PUZZLE</span></h1>
+    <p id="welcomeText">Welcome, Player!</p>
+  </header>
+
+  <div id="nameScreen">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="playerName" autocomplete="off" placeholder="Your name" />
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <div class="container hidden" id="gameContainer">
+    <div class="room hidden" id="room1">
+      <h2>Room 1: Number Lock</h2>
+      <p>Click in correct prime number order</p>
+      <div class="buttons">
+        <button class="order-btn"></button>
+        <button class="order-btn"></button>
+        <button class="order-btn"></button>
+        <button class="order-btn"></button>
+        <button class="order-btn"></button>
+      </div>
+      <p class="message" id="message1"></p>
+    </div>
+
+    <div class="room hidden" id="room2">
+      <h2>Room 2: Riddle</h2>
+      <p>Click button to solve this riddle:</p>
+      <p id="riddleQuestion" class="message"></p>
+      <button id="revealHint">💡 Solve Riddle</button>
+      <p class="message" id="message2"></p>
+    </div>
+
+    <div class="room hidden" id="room3">
+      <h2>Room 3: Word Scramble</h2>
+      <p>Unscramble this word: <span id="scrambleWord"></span></p>
+      <input type="text" id="codeInput" autocomplete="off" placeholder="Enter word" />
+      <button id="submitCode">Submit</button>
+      <p class="message" id="message3"></p>
+    </div>
+
+    <div class="room hidden" id="room4">
+      <h2>Room 4: Number Sequence</h2>
+      <p id="sequenceQuestion">Complete the sequence:</p>
+      <input type="text" id="riddleInput" autocomplete="off" placeholder="Next number" />
+      <button id="submitRiddle">Submit</button>
+      <p class="message" id="message4"></p>
+    </div>
+
+    <div class="room hidden" id="room5">
+      <h2>Room 5: Memory Puzzle</h2>
+      <p>Remember the 3 symbols:</p>
+      <div id="symbols"></div>
+      <p>What was the second symbol?</p>
+      <input type="text" id="mathInput" autocomplete="off" placeholder="Your answer" />
+      <button id="submitMath">Submit</button>
+      <p class="message" id="message5"></p>
+    </div>
+  </div>
+
+  <div id="congratsMessage" class="hidden">
+    <div class="congrats-box">
+      🏆 Congratulations, <span id="playerFinalName"></span>!<br />
+      You completed all rooms.<br />
+      Total Score: <span id="finalScore">0</span>
+      <br /><br />
+      <button id="playAgainBtn">🔁 Play Again</button>
+    </div>
+  </div>
+
+  <div id="roundClear" class="hidden">
+    <div class="congrats-box">
+      🎉 Congrats! You have cleared <span id="roundNum">Room 1</span><br />
+      Current Score: <span id="currentScore">20</span> Points
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
